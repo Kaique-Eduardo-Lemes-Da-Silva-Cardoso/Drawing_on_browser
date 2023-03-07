@@ -41,6 +41,11 @@ body {
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
+.pencil-icon{
+  width: 50%;
+  height: 50%;
+  
+}
 .container {
   margin-top: 25px;
   width: 100%;
@@ -64,6 +69,10 @@ body {
   width: 16%;
   height: 50%;
   border-radius: 12%;
+  display: flex;
+  padding: auto;
+  justify-content: center;
+  align-items: center;
 }
 #color-green {
   background-color: green;
