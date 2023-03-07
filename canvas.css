@@ -1,0 +1,73 @@
+* {
+
+  margin: 0  ;
+  padding: 0;
+}
+#hands {
+  /* display: flex; */
+  border: 1rem solid green;
+  width: 80%;
+  
+  border-radius: 5%;
+  /* padding: 0;
+  margin: 0 auto; */
+  /* full screen */
+/* height:   768px;
+   width: 1366px; */
+  /* overflow: auto;
+  resize: both; */
+}
+.canvas-container{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  
+}
+#clear{
+  height: 10vh;
+  width: 15%;
+  padding: 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 12%;
+  background-color: indigo;
+}
+.container{
+  margin-top: 25px;
+  width: 100%;
+  height: 30vh;
+  background-color: mediumslateblue;
+  border-radius: 15%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  /* grid-template-columns: 14.28% 14.28% 14.28% 14.28% 14.28% 14.28% 14.28% ;
+  grid-template-rows:100%; */
+
+}
+.blocks{
+  width: 16%;
+  height: 50%;
+  border-radius: 12%;
+}
+#color-green{
+background-color: green;
+grid-area: 1 / 2 /1 / 2;
+}
+#color-red{
+  background-color: red;
+}
+#color-blue{
+  background-color: blue;
+}
+#color-yellow{
+  background-color: yellow;
+}
+#color-purple{
+  background-color: purple;
+}
+#color-black{
+  background-color: black;
+}
