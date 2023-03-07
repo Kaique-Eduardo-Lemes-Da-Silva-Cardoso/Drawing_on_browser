@@ -29,7 +29,7 @@ body {
 }
 #clear {
   height: 10vh;
-  width: 15%;
+  width: 100%;
   padding: 0.5rem;
   font-size: 2rem;
 
@@ -40,6 +40,13 @@ body {
   -webkit-backdrop-filter: blur( 3.5px );
   border-radius: 10px;
   border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+.toolbar{
+  width: 16%;
+  display: flex;
+  height: auto;
+  flex-direction: column;
+  gap:1rem;
 }
 .pencil-icon{
   width: 50%;

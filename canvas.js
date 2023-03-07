@@ -9,8 +9,16 @@ const colors = {
     blackBox: document.querySelector("#color-black"),
     currentColor: "red"
 }
+const elementsOn = {
+    inputStroke: document.querySelector("#lineWidth"),
+}
+const data = {
+    lineWidth:5
+}
+elementsOn.inputStroke.addEventListener("input",(e)=>{
+data.lineWidth = e.target.value;
 
-
+})
 
 
 
@@ -29,14 +37,14 @@ document.addEventListener("DOMContentLoaded", () => {
         posAfter: { x: 50, Y: 60 }
     }
 
-    const desenhar = ({ posBefore, posAfter}, color) => {
+    const desenhar = ({ posBefore, posAfter }, color,lineWidth) => {
         // canvasContext.fillStyle = "green";
         canvasContext.strokeStyle = color;
-        canvasContext.lineWidth = 8;
+        canvasContext.lineWidth = lineWidth;
         canvasContext.lineJoin = "round";
-        let ajuste = 0
+      
         canvasContext.beginPath()
-        canvasContext.moveTo(posBefore.x + ajuste, posBefore.y + ajuste)
+        canvasContext.moveTo(posBefore.x , posBefore.y )
         canvasContext.lineTo(posAfter.x, posAfter.y)
         // desenha rodinhas
         // canvasContext.arc(posAfter.x, posAfter.y, 2 * Math.PI, posBefore.x, posBefore.y)
@@ -59,28 +67,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
         pincel.moving = true;
     }
-colors.blackBox.onclick = () => {
-colors.currentColor = "black"
-}
-colors.redBox.onclick = () => {
-colors.currentColor = "red"
-}
-colors.greenBox.onclick = () => {
-colors.currentColor = "green"
-}
-colors.blueBox.onclick = () => {
-colors.currentColor = "blue"
-}
-colors.purpleBox.onclick = () => {
-colors.currentColor = "purple"
-}
-colors.yellowBox.onclick = () => {
-colors.currentColor = "yellow"
-}
+    colors.blackBox.onclick = () => {
+        colors.currentColor = "black"
+    }
+    colors.redBox.onclick = () => {
+        colors.currentColor = "red"
+    }
+    colors.greenBox.onclick = () => {
+        colors.currentColor = "green"
+    }
+    colors.blueBox.onclick = () => {
+        colors.currentColor = "blue"
+    }
+    colors.purpleBox.onclick = () => {
+        colors.currentColor = "purple"
+    }
+    colors.yellowBox.onclick = () => {
+        colors.currentColor = "yellow"
+    }
+
+
+
+
+
 
     const ciclo = () => {
         if (pincel.active == true && pincel.moving && pincel.posBefore) {
-            desenhar(pincel,colors.currentColor)
+            desenhar(pincel, colors.currentColor,data.lineWidth)
             pincel.moving = false;
 
         }
