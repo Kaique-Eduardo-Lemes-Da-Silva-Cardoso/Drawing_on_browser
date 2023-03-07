@@ -95,6 +95,10 @@ document.addEventListener("DOMContentLoaded", () => {
        
         elementsOn.imgContainer.innerHTML = `<img id="imageDL" src="${image}" alt="">`;
     }
+    elementsOn.imgContainer.onclick = () =>{
+        elementsOn.imgContainer.innerHTML = ``;
+    }
+
     elementsOn.clearButton.onclick = () => {
         clear()
 
