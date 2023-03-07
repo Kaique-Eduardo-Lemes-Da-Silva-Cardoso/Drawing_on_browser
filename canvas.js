@@ -11,6 +11,10 @@ const colors = {
 }
 const elementsOn = {
     inputStroke: document.querySelector("#lineWidth"),
+    buttomDownload: document.querySelector("#download"),
+    clearButton:document.querySelector("#clear"),
+    imageDL:document.querySelector("#imageDL"),
+    imgContainer:document.querySelector("#img-container")
 }
 const data = {
     lineWidth:5
@@ -26,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let handsCanvas = document.querySelector("#hands");
     const canvasContext = handsCanvas.getContext("2d");
-    let clearButton = document.querySelector("#clear")
+    
     handsCanvas.width = globalThis.screen.availWidth * 0.8;
     handsCanvas.height = globalThis.screen.availHeight * 0.6;
     // console.log(handsCanvas.width, handsCanvas.height, canvasContext.canvas.getBoundingClientRect())
@@ -85,8 +89,16 @@ document.addEventListener("DOMContentLoaded", () => {
     colors.yellowBox.onclick = () => {
         colors.currentColor = "yellow"
     }
+    
+    elementsOn.buttomDownload.onclick = () =>{
+        let image = handsCanvas.toDataURL("image/png");
+       
+        elementsOn.imgContainer.innerHTML = `<img id="imageDL" src="${image}" alt="">`;
+    }
+    elementsOn.clearButton.onclick = () => {
+        clear()
 
-
+    }
 
 
 
@@ -101,10 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
         setTimeout(ciclo, 1)
     }
 
-    clearButton.onclick = () => {
-        clear()
-
-    }
+   
 
 
     console.log(canvasContext.canvas)
