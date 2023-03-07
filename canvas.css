@@ -1,43 +1,51 @@
 * {
-
-  margin: 0  ;
+  margin: 0;
   padding: 0;
+}
+body {
+  background-color: #090a0b;
 }
 #hands {
   /* display: flex; */
   border: 1rem solid green;
   width: 80%;
-  
+  background-color: white;
   border-radius: 5%;
+
+  box-shadow: 20px 20px 40px #040404, -20px -20px 40px #0e1012;
   /* padding: 0;
   margin: 0 auto; */
   /* full screen */
-/* height:   768px;
+  /* height:   768px;
    width: 1366px; */
   /* overflow: auto;
   resize: both; */
 }
-.canvas-container{
+.canvas-container {
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  
 }
-#clear{
+#clear {
   height: 10vh;
   width: 15%;
-  padding: 1.5rem;
-  font-size: 1rem;
-  border: none;
-  border-radius: 12%;
-  background-color: indigo;
+  padding: 0.5rem;
+  font-size: 2rem;
+
+
+  background: rgba(98, 1, 185, 0.95);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
-.container{
+.container {
   margin-top: 25px;
   width: 100%;
   height: 30vh;
-  background-color: mediumslateblue;
+
   border-radius: 15%;
   display: flex;
   flex-wrap: wrap;
@@ -45,29 +53,34 @@
   align-items: center;
   /* grid-template-columns: 14.28% 14.28% 14.28% 14.28% 14.28% 14.28% 14.28% ;
   grid-template-rows:100%; */
+  background: rgba(9, 10, 11, 0.85);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
-.blocks{
+.blocks {
   width: 16%;
   height: 50%;
   border-radius: 12%;
 }
-#color-green{
-background-color: green;
-grid-area: 1 / 2 /1 / 2;
+#color-green {
+  background-color: green;
+  grid-area: 1 / 2 /1 / 2;
 }
-#color-red{
+#color-red {
   background-color: red;
 }
-#color-blue{
+#color-blue {
   background-color: blue;
 }
-#color-yellow{
+#color-yellow {
   background-color: yellow;
 }
-#color-purple{
+#color-purple {
   background-color: purple;
 }
-#color-black{
+#color-black {
   background-color: black;
 }
