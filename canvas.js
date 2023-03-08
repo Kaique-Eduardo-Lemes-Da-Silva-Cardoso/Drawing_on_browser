@@ -14,7 +14,8 @@ const elementsOn = {
     buttomDownload: document.querySelector("#download"),
     clearButton:document.querySelector("#clear"),
     imageDL:document.querySelector("#imageDL"),
-    imgContainer:document.querySelector("#img-container")
+    imgContainer:document.querySelector("#img-container"),
+    eraserButton: document.querySelector("#eraser")
 }
 const data = {
     lineWidth:5
@@ -38,7 +39,9 @@ document.addEventListener("DOMContentLoaded", () => {
         moving: false,
         active: false,
         posBefore: null,
-        posAfter: { x: 50, Y: 60 }
+        posAfter: { x: 50, Y: 60 },
+        isEraser:false,
+        eraserSize: 30
     }
 
     const desenhar = ({ posBefore, posAfter }, color,lineWidth) => {
@@ -53,6 +56,11 @@ document.addEventListener("DOMContentLoaded", () => {
         // desenha rodinhas
         // canvasContext.arc(posAfter.x, posAfter.y, 2 * Math.PI, posBefore.x, posBefore.y)
         canvasContext.stroke()
+    }
+    const eraser = ({posBefore,posAfter,eraserSize}) =>{
+        canvasContext.clearRect(posAfter.x, posAfter.y,  eraserSize , eraserSize )
+    
+
     }
     function clear() {
         canvasContext.clearRect(0, 0, 1366, 768)
@@ -73,21 +81,27 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     colors.blackBox.onclick = () => {
         colors.currentColor = "black"
+        pincel.isEraser = false;
     }
     colors.redBox.onclick = () => {
         colors.currentColor = "red"
+        pincel.isEraser = false;
     }
     colors.greenBox.onclick = () => {
         colors.currentColor = "green"
+        pincel.isEraser = false;
     }
     colors.blueBox.onclick = () => {
         colors.currentColor = "blue"
+        pincel.isEraser = false;
     }
     colors.purpleBox.onclick = () => {
         colors.currentColor = "purple"
+        pincel.isEraser = false;
     }
     colors.yellowBox.onclick = () => {
         colors.currentColor = "yellow"
+        pincel.isEraser = false;
     }
     
     elementsOn.buttomDownload.onclick = () =>{
@@ -103,16 +117,23 @@ document.addEventListener("DOMContentLoaded", () => {
         clear()
 
     }
-
+    elementsOn.eraserButton.onclick = () =>{
+        pincel.isEraser = true;
+    }
 
 
 
     const ciclo = () => {
-        if (pincel.active == true && pincel.moving && pincel.posBefore) {
+
+        if (pincel.active == true && pincel.moving && pincel.posBefore && pincel.isEraser == false) {
             desenhar(pincel, colors.currentColor,data.lineWidth)
             pincel.moving = false;
 
-        }
+        }else  if (pincel.isEraser == true && pincel.moving&& pincel.posBefore && pincel.active == true) {
+
+            eraser(pincel)
+            pincel.moving = false;
+         }
         pincel.posBefore = { x: pincel.posAfter.x, y: pincel.posAfter.y }
         setTimeout(ciclo, 1)
     }

@@ -2,8 +2,21 @@
   margin: 0;
   padding: 0;
 }
+:root{
+  --green-color:rgba( 2, 137, 75, 1 );
+}
 body {
   background-color: #090a0b;
+}
+#img-container{
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+#imageDL{
+  background-color: white;
 }
 #hands {
   /* display: flex; */
@@ -42,6 +55,25 @@ body {
   border-radius: 10px;
   border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
+.eraser-icon{
+  height: 50%;
+  width: 50%;
+}
+#eraser {
+  height: 30vh;
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 2rem;
+
+
+  background: rgba( 2, 137, 75, 1 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 3.5px );
+  -webkit-backdrop-filter: blur( 3.5px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
 #download {
   height: 10vh;
   width: 100%;
