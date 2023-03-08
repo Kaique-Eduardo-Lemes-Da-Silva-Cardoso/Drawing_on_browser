@@ -15,14 +15,20 @@ const elementsOn = {
     clearButton:document.querySelector("#clear"),
     imageDL:document.querySelector("#imageDL"),
     imgContainer:document.querySelector("#img-container"),
-    eraserButton: document.querySelector("#eraser")
+    eraserButton: document.querySelector("#eraser"),
+    eraserSize: document.querySelector("#eraserSize")
 }
 const data = {
-    lineWidth:5
+    lineWidth:5,
+    eraserSize: 30
 }
+
 elementsOn.inputStroke.addEventListener("input",(e)=>{
 data.lineWidth = e.target.value;
 
+})
+elementsOn.eraserSize.addEventListener("input",(e)=>{
+    data.eraserSize = e.target.value;
 })
 
 
@@ -41,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
         posBefore: null,
         posAfter: { x: 50, Y: 60 },
         isEraser:false,
-        eraserSize: 30
+       
     }
 
     const desenhar = ({ posBefore, posAfter }, color,lineWidth) => {
@@ -57,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // canvasContext.arc(posAfter.x, posAfter.y, 2 * Math.PI, posBefore.x, posBefore.y)
         canvasContext.stroke()
     }
-    const eraser = ({posBefore,posAfter,eraserSize}) =>{
+    const eraser = ({posBefore,posAfter},eraserSize) =>{
         canvasContext.clearRect(posAfter.x, posAfter.y,  eraserSize , eraserSize )
     
 
@@ -131,7 +137,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         }else  if (pincel.isEraser == true && pincel.moving&& pincel.posBefore && pincel.active == true) {
 
-            eraser(pincel)
+            eraser(pincel,data.eraserSize)
             pincel.moving = false;
          }
         pincel.posBefore = { x: pincel.posAfter.x, y: pincel.posAfter.y }
