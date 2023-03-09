@@ -16,7 +16,9 @@ const elementsOn = {
     imageDL:document.querySelector("#imageDL"),
     imgContainer:document.querySelector("#img-container"),
     eraserButton: document.querySelector("#eraser"),
-    eraserSize: document.querySelector("#eraserSize")
+    eraserSize: document.querySelector("#eraserSize"),
+    pencilButton: document.querySelector("#pencil-btn"),
+    pencilIcon: document.querySelector(".pencil-icon")
 }
 const data = {
     lineWidth:5,
@@ -88,26 +90,38 @@ document.addEventListener("DOMContentLoaded", () => {
     colors.blackBox.onclick = () => {
         colors.currentColor = "black"
         pincel.isEraser = false;
+        elementsOn.pencilButton.style.backgroundColor = "black";
+        elementsOn.pencilIcon.style.filter = "invert(2)"
     }
     colors.redBox.onclick = () => {
         colors.currentColor = "red"
         pincel.isEraser = false;
+        elementsOn.pencilButton.style.backgroundColor = "red"
+        elementsOn.pencilIcon.style.filter = ""
     }
     colors.greenBox.onclick = () => {
         colors.currentColor = "green"
         pincel.isEraser = false;
+        elementsOn.pencilButton.style.backgroundColor = "green"
+         elementsOn.pencilIcon.style.filter = ""
     }
     colors.blueBox.onclick = () => {
         colors.currentColor = "blue"
         pincel.isEraser = false;
+        elementsOn.pencilButton.style.backgroundColor = "blue"
+         elementsOn.pencilIcon.style.filter = ""
     }
     colors.purpleBox.onclick = () => {
         colors.currentColor = "purple"
         pincel.isEraser = false;
+        elementsOn.pencilButton.style.backgroundColor = "purple"
+         elementsOn.pencilIcon.style.filter = ""
     }
     colors.yellowBox.onclick = () => {
         colors.currentColor = "yellow"
         pincel.isEraser = false;
+        elementsOn.pencilButton.style.backgroundColor = "yellow"
+         elementsOn.pencilIcon.style.filter = ""
     }
     
     elementsOn.buttomDownload.onclick = () =>{

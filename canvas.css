@@ -2,25 +2,25 @@
   margin: 0;
   padding: 0;
 }
-:root{
-  --green-color:rgba( 2, 137, 75, 1 );
+:root {
+  --green-color: rgba(2, 137, 75, 1);
 }
 body {
   background-color: #090a0b;
 }
-#img-container{
+#img-container {
   display: flex;
   margin: 0 auto;
   justify-content: center;
   align-items: center;
   margin-top: 2rem;
 }
-#imageDL{
+#imageDL {
   background-color: white;
 }
 #hands {
   /* display: flex; */
-  border: 1rem solid  #02894B;
+  border: 1rem solid #02894b;
   width: 80%;
   background-color: white;
   border-radius: 12px;
@@ -35,70 +35,108 @@ body {
   resize: both; */
 }
 .canvas-container {
-  
   width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  /* align-items: center; */
 }
 #clear {
   height: 10vh;
-  width: 100%;
+  width: 40%;
   padding: 0.5rem;
   font-size: 2rem;
 
-
-  background: rgba( 2, 137, 75, 1 );
-  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-  backdrop-filter: blur( 3.5px );
-  -webkit-backdrop-filter: blur( 3.5px );
+  background: rgba(2, 137, 75, 1);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(3.5px);
+  -webkit-backdrop-filter: blur(3.5px);
   border-radius: 10px;
-  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
-.eraser-icon{
-  height: 50%;
-  width: 50%;
+.eraser-icon {
+  height: 100%;
+  width: 100%;
+}
+#lineWidth,
+#eraserSize {
+  appearance: slider-vertical;
+}
+.DJ-tools {
+  margin-top: 2vh;
+  width: 100%;
+  height: 30vh;
+  display: flex;
+  justify-content: space-around;
+}
+
+.DJ-range {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+#pencil-btn {
+  height: 30%;
+  width: 30%;
+  padding: 5%;
+  font-size: 2rem;
+  margin: 5%;
+  
+
+  background: rgba(2, 137, 75, 1);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(3.5px);
+  -webkit-backdrop-filter: blur(3.5px);
+  border-radius: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 #eraser {
-  height: 20vh;
-  width: 100%;
-  padding: 0.5rem;
+  height: 40%;
+  width: 40%;
+  padding: 5%;
   font-size: 2rem;
+  margin: 10%;
 
-
-  background: rgba( 2, 137, 75, 1 );
-  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-  backdrop-filter: blur( 3.5px );
-  -webkit-backdrop-filter: blur( 3.5px );
-  border-radius: 10px;
-  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  background: rgba(2, 137, 75, 1);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(3.5px);
+  -webkit-backdrop-filter: blur(3.5px);
+  border-radius: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
-
+.btn-order{
+  display: flex;
+  width: 100%;
+  height: auto;
+  justify-content: space-around;
+  align-items: center;
+}
 #download {
   height: 10vh;
-  width: 100%;
+  width: 40%;
   padding: 0.5rem;
   font-size: 2rem;
 
-
-  background: rgba( 2, 137, 75, 1 );
-  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-  backdrop-filter: blur( 3.5px );
-  -webkit-backdrop-filter: blur( 3.5px );
+  background: rgba(2, 137, 75, 1);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(3.5px);
+  -webkit-backdrop-filter: blur(3.5px);
   border-radius: 10px;
-  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
-.toolbar{
+.toolbar {
   width: 16%;
   display: flex;
-  height: auto;
+  height: 100%;
   flex-direction: column;
-  gap:1rem;
+  margin: 0 auto;
+  gap: 1rem;
 }
-.pencil-icon{
-  width: 50%;
-  height: 50%;
-  
+.pencil-icon {
+  width: 100%;
+  height: 100%;
 }
 .container {
   margin-top: 25px;
@@ -120,17 +158,22 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
 .blocks {
-  width: 16%;
-  height: 50%;
-  border-radius: 12%;
-  display: flex;
+  width: 80%;
+  height: 80%;
+  border-radius: 100%;
+
   padding: auto;
-  justify-content: center;
-  align-items: center;
+}
+.colors {
+  width: 100%;
+  height: 20vh;
+  display: grid;
+  grid-template-columns: 33.3% 33.3% 33.3%;
+  grid-template-rows: 50% 50%;
+  gap: 10px;
 }
 #color-green {
   background-color: green;
-  grid-area: 1 / 2 /1 / 2;
 }
 #color-red {
   background-color: red;
